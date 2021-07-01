@@ -1,0 +1,4 @@
+debug.log
+build/app.fba
+node_modules/
+companion/weather.js

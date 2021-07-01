@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="clock" class="background">
+
+<defs>
+    <symbol id="heartRateSymbol">
+    </symbol>
+    <symbol id="hourMark">
+        <line y1="-152" y2="-140" stroke-width="3" />
+    </symbol>
+    <symbol id="minuteMark">
+        <circle cx="0" cy="-150" r="3" />
+    </symbol>
+    <symbol id="fiveMinutesPrimary">
+        <g transform="rotate(0)" class="primary"><use href="#hourMark" /></g>
+        <g class="tertiary" transform="rotate(6)">
+            <use href="#minuteMark" />
+            <g transform="rotate(6)"><use href="#minuteMark" /></g>
+            <g transform="rotate(12)"><use href="#minuteMark" /></g>
+            <g transform="rotate(18)"><use href="#minuteMark" /></g>
+        </g>
+    </symbol>
+    <symbol id="fiveMinutes">
+        <g transform="rotate(0)" class="secondary"><use href="#minuteMark" /></g>
+        <g class="tertiary" transform="rotate(6)">
+            <use href="#minuteMark" />
+            <g transform="rotate(6)"><use href="#minuteMark" /></g>
+            <g transform="rotate(12)"><use href="#minuteMark" /></g>
+            <g transform="rotate(18)"><use href="#minuteMark" /></g>
+        </g>
+    </symbol>
+</defs>
+
+<g transform="translate(50%,50%)">
+    <g id="numbers">
+        <text class="primary" y="-115">12</text>
+        <g transform="rotate(30)"><text class="primary" y="-115">1</text></g>
+        <g transform="rotate(60)"><text class="primary" y="-115">2</text></g>
+        <g transform="rotate(90)" id="iii"><text class="primary" y="-115">3</text></g>
+        <g transform="rotate(300)"><text class="primary" y="132">4</text></g>
+        <g transform="rotate(330)"><text class="primary" y="132">5</text></g>
+        <g id="vi"><text class="primary" y="132">6</text></g>
+        <g transform="rotate(30)"><text class="primary" y="132">7</text></g>
+        <g transform="rotate(60)"><text class="primary" y="132">8</text></g>
+        <g transform="rotate(270)" id="ix"><text class="primary" y="-115">9</text></g>
+        <g transform="rotate(300)"><text class="primary" y="-115">10</text></g>
+        <g transform="rotate(330)"><text class="primary" y="-115">11</text></g>
+    </g>
+
+    <text id="dateBox" visibility="hidden" x="90" y="9" class="primary" text-length="10">DateText</text>
+
+    <g id="weatherBox" visibility="hidden">
+        <text id="temperature" class="primary" x="-60" y="9" text-length="5">--</text>
+        <image id="weatherIcon" x="-125" y="-20" width="40" height="40" href="weather/4d.png" fill="#CCCCCC" />
+    </g>
+
+    <g id="heartrateBox" visibility="hidden">
+        <text id="bpm" class="primary" x="0" y="95" text-length="5">--</text>
+        <use id="heartRate" href="#heartRateSymbol" />
+    </g>
+
+    <g id="icons" visibility="hidden">
+        <image href="battery.png" width="30" height="30" x="-135" y="-140" fill="#3FD300" />
+        <image href="footprints.png" width="25" height="42" x="113" y="-144" fill="#EFC12B" />
+        <image href="signpost.png" width="25" height="37" x="113" y="106" fill="#376EEF" />
+        <image href="dart.png" width="25" height="25" x="-137" y="111" fill="#EA7D1E" />
+    </g>
+
+    <g transform="rotate(0)"><use href="#fiveMinutesPrimary" /></g>
+    <g transform="rotate(30)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(60)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(90)"><use href="#fiveMinutesPrimary" /></g>
+    <g transform="rotate(120)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(150)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(180)"><use href="#fiveMinutesPrimary" /></g>
+    <g transform="rotate(210)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(240)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(270)"><use href="#fiveMinutesPrimary" /></g>
+    <g transform="rotate(300)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(330)"><use href="#fiveMinutes" /></g>
+
+    <g>
+        <g id="hours">
+            <line x1="0" y1="0" x2="0" y2="-80" class="secondary" stroke-width="7">
+            </line>
+        </g>
+        <g id="minutes">
+            <line x1="0" y1="0" x2="0" y2="-120" class="secondary" stroke-width="5">
+            </line>
+        </g>
+        <g id="seconds">
+            <line x1="0" y1="0" x2="0" y2="-140" class="accent" stroke-width="3">
+            </line>
+        </g>
+    </g>
+
+    <circle r="8" class="secondary" />
+</g>
+</svg>
