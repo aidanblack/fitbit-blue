@@ -1,4 +1,4 @@
-# Fitbit-Template
+# Blue
 ## Modular clock template with sensor info for Fitbit Versa 3 and Sense
 ### [Get this clock face from the Fitbit Gallery](https://gallery.fitbit.com/developer/78f1fb22-137c-4f12-adff-762ab1297e1f)
 Included sensors are: 

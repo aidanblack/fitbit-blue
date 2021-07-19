@@ -1,8 +1,8 @@
-function templateSettings(props) {
+function blueSettings(props) {
     return (
         <Page>
             <Section
-                title={<Text bold>Template Settings</Text>}>
+                title={<Text bold>Blue Settings</Text>}>
                 <Select
                     label={`Temperature Unit`}
                     settingsKey="tempUnit"
@@ -32,4 +32,4 @@ function templateSettings(props) {
     );
 }
 
-registerSettingsPage(templateSettings);
+registerSettingsPage(blueSettings);

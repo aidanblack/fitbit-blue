@@ -5,7 +5,7 @@
   },
   "fitbit": {
     "appType": "clockface",
-    "appDisplayName": "template",
+    "appDisplayName": "Blue",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [
@@ -13,8 +13,7 @@
       "access_heart_rate",
       "access_internet",
       "access_location",
-      "access_sleep",
-      "access_aod"
+      "access_sleep"
     ],
     "buildTargets": [
       "atlas",
@@ -22,10 +21,11 @@
     ],
     "i18n": {
       "en-US": {
-        "name": "template"
+        "name": "Blue"
       }
     },
-    "defaultLanguage": "en-US"
+    "defaultLanguage": "en-US",
+    "appUUID": "3c0ff5ad-50e7-4943-bdcd-f7521ef8e82b"
   },
   "dependencies": {
     "fitbit": "0.0.7",

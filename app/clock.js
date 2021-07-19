@@ -6,12 +6,15 @@ class Clock {
     updateGoals = function() {};
     weather;
 
-    constructor(dateBox, hourHand, minuteHand, secondsHand) {
+    constructor(dateBox, hourHand, minuteHand, secondHand, hourShadow, minuteShadow, secondShadow) {
         try {
             this.dateBox = dateBox;
             this.hourHand = hourHand;
             this.minuteHand = minuteHand;
-            this.secondsHand = secondsHand;
+            this.secondHand = secondHand;
+            this.hourShadow = hourShadow;
+            this.minuteShadow = minuteShadow;
+            this.secondShadow = secondShadow;
 
             clock.granularity = "seconds";
         }
@@ -29,7 +32,10 @@ class Clock {
 
         this.hourHand.groupTransform.rotate.angle = ((360 / 12) * hours) + ((360 / 12 / 60) * minutes);
         this.minuteHand.groupTransform.rotate.angle = (360 / 60) * minutes + ((360 / 60 / 60) * seconds);
-        this.secondsHand.groupTransform.rotate.angle = seconds * 6;
+        this.secondHand.groupTransform.rotate.angle = seconds * 6;
+        this.hourShadow.groupTransform.rotate.angle = ((360 / 12) * hours) + ((360 / 12 / 60) * minutes);
+        this.minuteShadow.groupTransform.rotate.angle = (360 / 60) * minutes + ((360 / 60 / 60) * seconds);
+        this.secondShadow.groupTransform.rotate.angle = seconds * 6;
 
         if((clock.granularity === "minutes"  && (minutes + 5) % 5 === 0) || seconds === 0) this.updateGoals();
         if((clock.granularity === "minutes"  && (minutes + 5) % 5 === 0) || seconds === 0) this.updateBattery();
@@ -41,7 +47,7 @@ class Clock {
 
     updateDate(date) {
         let dateText = date.toLocaleString('default', { month: 'short' }).substring(4, 10);
-        this.dateBox.text = dateText;
+        this.dateBox.text = dateText.replace(" ", "\n");
     }
 
     // ***** Add event handler *****
