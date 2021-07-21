@@ -1,5 +1,6 @@
 import { display } from "display";
 import document from "document";
+import { modes } from "./modes";
 
 class Face {
     settings;
@@ -7,14 +8,15 @@ class Face {
     hrm;
     dateBox;
 
-    constructor(settings, body, hrm, dateBox) {
+    constructor(settings, body, hrm, dateMonth, dateDay) {
         this.settings = settings;
         this.body = body;
         this.hrm = hrm;
-        this.dateBox = dateBox;
+        this.dateMonth = dateMonth;
+        this.dateDay = dateDay;
     }
 
-    updateDisplay() {
+    updateDisplay(mode) {
         // Is AOD inactive and the display is on?
         if (!display.aodActive && display.on) {}
         else {}
@@ -43,7 +45,48 @@ class Face {
       
         if (this.settings.hideGoals) {}
         else {}
-    }      
+
+        var statsArc = document.getElementById("statsArc");
+        if (mode == modes.Battery)
+        {
+            document.getElementById("zoneIcon").style.visibility = "hidden";
+            document.getElementById("batteryIcon").style.visibility = "visible";
+            statsArc.style.fill = "#3FD300";
+        }
+        if (mode == modes.HeartRate)
+        {
+            document.getElementById("batteryIcon").style.visibility = "hidden";
+            document.getElementById("heartIcon").style.visibility = "visible";
+            statsArc.style.fill = "#D3003F";
+            this.hrm.start();
+        }
+        else if (mode == modes.Steps)
+        {
+            document.getElementById("heartIcon").style.visibility = "hidden";
+            document.getElementById("stepsIcon").style.visibility = "visible";
+            statsArc.style.fill = "#EFC12B";
+        }
+        else if (mode == modes.Distance)
+        {
+            document.getElementById("stepsIcon").style.visibility = "hidden";
+            document.getElementById("distanceIcon").style.visibility = "visible";
+            statsArc.style.fill = "#376EEF";
+        }
+        else if (mode == modes.Zone)
+        {
+            document.getElementById("distanceIcon").style.visibility = "hidden";
+            document.getElementById("zoneIcon").style.visibility = "visible";
+            statsArc.style.fill = "#EA7D1E";
+        }
+    }
+
+    switchMode(mode) {
+        if (mode === modes.Battery) return modes.HeartRate;
+        if (mode === modes.HeartRate) return modes.Steps;
+        if (mode === modes.Steps) return modes.Distance;
+        if (mode === modes.Distance) return modes.Zone;
+        if (mode === modes.Zone) return modes.Battery;
+    }
 }
 
 export default Face;

@@ -1,14 +1,17 @@
 import clock from "clock";
+import { modes } from "./modes";
 
 class Clock {
-    updateDisplay = function() {};
-    updateBattery = function() {};
-    updateGoals = function() {};
+    updateDisplay = function(mode) {};
+    updateBattery = function(mode) {};
+    updateGoals = function(mode) {};
     weather;
+    mode;
 
-    constructor(dateBox, hourHand, minuteHand, secondHand, hourShadow, minuteShadow, secondShadow) {
+    constructor(dateMonth, dateDay, hourHand, minuteHand, secondHand, hourShadow, minuteShadow, secondShadow) {
         try {
-            this.dateBox = dateBox;
+            this.dateMonth = dateMonth;
+            this.dateDay = dateDay;
             this.hourHand = hourHand;
             this.minuteHand = minuteHand;
             this.secondHand = secondHand;
@@ -37,17 +40,18 @@ class Clock {
         this.minuteShadow.groupTransform.rotate.angle = (360 / 60) * minutes + ((360 / 60 / 60) * seconds);
         this.secondShadow.groupTransform.rotate.angle = seconds * 6;
 
-        if((clock.granularity === "minutes"  && (minutes + 5) % 5 === 0) || seconds === 0) this.updateGoals();
-        if((clock.granularity === "minutes"  && (minutes + 5) % 5 === 0) || seconds === 0) this.updateBattery();
+        if((clock.granularity === "minutes"  && (minutes + 5) % 5 === 0) || seconds === 0) this.updateGoals(this.mode);
+        if((clock.granularity === "minutes"  && (minutes + 5) % 5 === 0) || seconds === 0) this.updateBattery(this.mode);
         if(this.weather.timestamp === 0 || currentTimestamp - this.weather.timestamp > (30 * 60 * 1000)) this.weather.updateWeather();
         //console.log(`${this.weather.timestamp} : ${currentTimestamp}`);
 
-        this.updateDisplay();
+        this.updateDisplay(this.mode);
     }
 
     updateDate(date) {
         let dateText = date.toLocaleString('default', { month: 'short' }).substring(4, 10);
-        this.dateBox.text = dateText.replace(" ", "\n");
+        this.dateMonth.text = dateText.substring(0,3)
+        this.dateDay.text = dateText.substring(4, 6);
     }
 
     // ***** Add event handler *****
