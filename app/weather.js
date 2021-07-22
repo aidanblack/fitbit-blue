@@ -37,6 +37,12 @@ class Weather {
         this.sunset.startAngle = 180 - sunriseAngle;
         this.sunset.sweepAngle = 360 - sunsetAngle + sunriseAngle;
 
+        var timestampDate = new Date(this.timestamp);
+        let hours = timestampDate.getHours();
+        let minutes = timestampDate.getMinutes();
+        var rotateAngle = ((360 / 24) * hours) + ((360 / 24 / 60) * minutes);
+        document.getElementById("sunlight").groupTransform.rotate.angle = 180 + rotateAngle;
+
         console.log("Weather Updated");
     }
 
