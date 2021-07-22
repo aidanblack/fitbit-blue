@@ -1,13 +1,12 @@
 import clock from "clock";
-import document from "document";
 import { display } from "display";
-import { HeartRateSensor } from "heart-rate";
-import { BodyPresenceSensor } from "body-presence";
+import document from "document";
 import { me } from "appbit";
 import * as messaging from "messaging";
 import * as simpleSettings from "./device-settings";
 import Clock from "./clock";
 import Battery from "./battery";
+import Body from "./body";
 import Weather from "./weather";
 import Face from "./face";
 import Goals from "./goals";
@@ -80,49 +79,13 @@ clockController.mode = modes.Battery;
 // ***** Initialize Body & Heart Rate *****
 console.log("initialize body and heart rate");
 
-const heartRate = document.getElementById("heartRate");
-const body = null;
-const hrm;
-
-function processHeartRate() {
-  if (clockController.mode == modes.HeartRate) {
-    heartRate.animate("enable");
-    var current = hrm.heartRate ?? 0;
-    var max = 220;
-    var angle = 360 * (current / max);
-    angle = Math.round(angle);
-    if (angle > 360) angle = 360;
-    document.getElementById("statsArc").sweepAngle = angle;
-  }
-}
-
-function processBodyPresence() {
-  if (!settings.hideHeartRate && display.on && body.present) {
-    hrm.start();
-  } else {
-    hrm.stop();
-  }
-}
-
-if (HeartRateSensor) {
-  hrm = new HeartRateSensor({ frequency: 5 });
-  hrm.addEventListener("reading", () => {
-    processHeartRate();
-  });
-}
-
-if (BodyPresenceSensor) {
-  body = new BodyPresenceSensor();
-  body.start();
-  body.addEventListener("reading", () => {
-    processBodyPresence();
-  });
-}
+var body = new Body(settings);
+body.mode = clockController.mode;
 
 // ***** Display *****
 console.log("set up display");
 
-var face = new Face(settings, body, hrm, dateMonth, dateDay);
+var face = new Face(settings, dateMonth, dateDay);
 
 if (display.aodAvailable && me.permissions.granted("access_aod")) {
   // tell the system we support AOD
@@ -132,14 +95,14 @@ if (display.aodAvailable && me.permissions.granted("access_aod")) {
   display.addEventListener("change", () => {
     // Is the display on?
     if (!display.aodActive && display.on) {
-      hrm.start();
-      body.start();
+      body.hrm.start();
+      body.body.start();
       clock.granularity = "seconds";
       clockController.weather.updateWeather();
     }
     else {
-      hrm.stop();
-      body.stop();
+      body.hrm.stop();
+      body.body.stop();
       clock.granularity = "minutes";
     }
     processHeartRate();
@@ -151,14 +114,14 @@ else {
   display.addEventListener("change", () => {
     // Is the display on?
     if (display.on) {
-      hrm.start();
-      body.start();
+      body.hrm.start();
+      body.body.start();
       clock.granularity = "seconds";
       clockController.weather.updateWeather();
     }
     else {
-      hrm.stop();
-      body.stop();
+      body.hrm.stop();
+      body.body.stop();
       clock.granularity = "minutes";
     }
     processHeartRate();
@@ -171,6 +134,7 @@ clockController.updateDisplay = (mode) => { face.updateDisplay(mode) };
 const smallRing3 = document.getElementById("smallRing3");
 smallRing3.addEventListener("click", (evt) => {
   clockController.mode = face.switchMode(clockController.mode);
+  body.mode = clockController.mode;
   clockController.updateGoals(clockController.mode);
   clockController.updateBattery(clockController.mode);
   clockController.updateDisplay(clockController.mode);
@@ -218,6 +182,9 @@ clockController.updateBattery = (mode) => { battery.updateBattery(mode) };
 // ***** Trigger Updates *****
 console.log("start updates");
 
+body.initializeBody();
+face.body = body.body;
+face.hrm = body.hrm;
 clockController.updateGoals(clockController.mode);
 clockController.updateBattery(clockController.mode);
 clockController.startClock();

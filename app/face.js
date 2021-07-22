@@ -6,12 +6,9 @@ class Face {
     settings;
     body;
     hrm;
-    dateBox;
 
-    constructor(settings, body, hrm, dateMonth, dateDay) {
+    constructor(settings, dateMonth, dateDay) {
         this.settings = settings;
-        this.body = body;
-        this.hrm = hrm;
         this.dateMonth = dateMonth;
         this.dateDay = dateDay;
     }
@@ -58,7 +55,7 @@ class Face {
             document.getElementById("batteryIcon").style.visibility = "hidden";
             document.getElementById("heartIcon").style.visibility = "visible";
             statsArc.style.fill = "#D3003F";
-            this.hrm.start();
+            if (this.body.present) this.hrm.start();
         }
         else if (mode == modes.Steps)
         {

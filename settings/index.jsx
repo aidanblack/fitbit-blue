@@ -11,7 +11,7 @@ function blueSettings(props) {
                         { name: "Farenheit" }
                     ]}
                 />
-                <Toggle
+                {/* <Toggle
                     settingsKey="hideDate"
                     label="Hide Date"
                 />
@@ -26,7 +26,7 @@ function blueSettings(props) {
                 <Toggle
                     settingsKey="hideGoals"
                     label="Hide Goals"
-                />
+                /> */}
             </Section>
         </Page>
     );
