@@ -11,6 +11,16 @@ function blueSettings(props) {
                         { name: "Farenheit" }
                     ]}
                 />
+                <Select
+                    label={`Background Color`}
+                    settingsKey="faceColor"
+                    options={[
+                        { name: "Blue" },
+                        { name: "Green" },
+                        { name: "Red" },
+                        { name: "Grey" }
+                    ]}
+                />
                 {/* <Toggle
                     settingsKey="hideDate"
                     label="Hide Date"

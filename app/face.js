@@ -82,6 +82,17 @@ class Face {
         if (mode === modes.Distance) return modes.Zone;
         if (mode === modes.Zone) return modes.Battery;
     }
+
+    switchColor(color) {
+        if (color == 0) document.getElementById("faceBlue").style.visibility = "visible";
+        else document.getElementById("faceBlue").style.visibility = "hidden";
+        if (color == 1) document.getElementById("faceGreen").style.visibility = "visible";
+        else document.getElementById("faceGreen").style.visibility = "hidden";
+        if (color == 2) document.getElementById("faceRed").style.visibility = "visible";
+        else document.getElementById("faceRed").style.visibility = "hidden";
+        if (color == 3) document.getElementById("faceGrey").style.visibility = "visible";
+        else document.getElementById("faceGrey").style.visibility = "hidden";
+    }
 }
 
 export default Face;

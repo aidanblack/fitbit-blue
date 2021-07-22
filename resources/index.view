@@ -57,7 +57,7 @@
     <arc x="-165" y="-165" width="330" height="330" fill="#777777"
         arc-width="5" start-angle="0" sweep-angle="360" />
 
-    <svg mask="#mask" x="-155" y="-155" width="310" height="310">
+    <svg id="faceBlue" mask="#mask" x="-155" y="-155" width="310" height="310">
         <gradientRect x="0" y="0" width="100%" height="100%"
         gradient-type="bilinear"
         gradient-x1="75" gradient-y1="75"
@@ -66,6 +66,36 @@
         gradient-color2="#145986"
         gradient-color3="#145986"
         gradient-color4="#0d3a58" />
+    </svg>
+    <svg id="faceGreen" mask="#mask" x="-155" y="-155" width="310" height="310" visibility="hidden">
+        <gradientRect x="0" y="0" width="100%" height="100%"
+        gradient-type="bilinear"
+        gradient-x1="75" gradient-y1="75"
+        gradient-x2="258" gradient-y2="258"
+        gradient-color1="#10724b"
+        gradient-color2="#148659"
+        gradient-color3="#148659"
+        gradient-color4="#0d583a" />
+    </svg>
+    <svg id="faceRed" mask="#mask" x="-155" y="-155" width="310" height="310" visibility="hidden">
+        <gradientRect x="0" y="0" width="100%" height="100%"
+        gradient-type="bilinear"
+        gradient-x1="75" gradient-y1="75"
+        gradient-x2="258" gradient-y2="258"
+        gradient-color1="#721010"
+        gradient-color2="#861414"
+        gradient-color3="#861414"
+        gradient-color4="#580d0d" />
+    </svg>
+    <svg id="faceGrey" mask="#mask" x="-155" y="-155" width="310" height="310" visibility="hidden">
+        <gradientRect x="0" y="0" width="100%" height="100%"
+        gradient-type="bilinear"
+        gradient-x1="75" gradient-y1="75"
+        gradient-x2="258" gradient-y2="258"
+        gradient-color1="#4b4b4b"
+        gradient-color2="#595959"
+        gradient-color3="#595959"
+        gradient-color4="#3a3a3a" />
     </svg>
 
     <g transform="rotate(0)"><use href="#fiveMinutesPrimary" /></g>

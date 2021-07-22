@@ -32,6 +32,9 @@ messaging.peerSocket.addEventListener("message", (evt) => {
       weather.tempUnit = evt.data.value.selected;
       clockController.weather.updateWeather();
     }
+    if (evt.data.key === "faceColor") {
+      face.switchColor(evt.data.value.selected);
+    }
   }
 });
 
@@ -108,6 +111,9 @@ smallRing3.addEventListener("click", (evt) => {
   console.log(JSON.stringify(clockController.mode));
 });
 
+console.log(settings.faceColor.selected);
+face.switchColor(settings.faceColor.selected);
+
 // ***** Weather *****
 console.log("set up weather");
 
@@ -123,11 +129,11 @@ const temperature = new FitFont({
 
 var weather = new Weather(temperature, document.getElementById("weatherIcon"));
 try {
-  weather.tempUnit = settings.tempUnit.selected || "Celsius";
+  weather.tempUnit = settings.tempUnit.selected || "1";
 }
 catch (err) {
   console.log(err);
-  weather.tempUnit = "Celsius";
+  weather.tempUnit = "1";
 }
 clockController.weather = weather;
 
