@@ -1,4 +1,5 @@
 import * as weather from 'fitbit-weather/app';
+import document from "document";
 
 class Weather {
     tempUnit = "0";
@@ -7,6 +8,7 @@ class Weather {
     constructor(temp, icon) {
         this.temp = temp;
         this.icon = icon;
+        this.sunset = document.getElementById("sunset");
     }
 
     processWeather(weather) {
@@ -21,6 +23,19 @@ class Weather {
         else dayNight = "n";
         weatherIcon.href = `weather/${weatherCode}${dayNight}.png`;
         this.timestamp = weather.timestamp;
+
+        var sunriseTime = new Date(weather.sunrise);
+        var sunsetTime = new Date(weather.sunset);
+    
+        var sunriseHours = sunriseTime.getHours();
+        var sunriseMinutes = sunriseTime.getMinutes();
+        var sunsetHours = sunsetTime.getHours();
+        var sunsetMinutes = sunsetTime.getMinutes();
+    
+        var sunriseAngle = ((360 / 24) * sunriseHours) + ((360 / 24 / 60) * sunriseMinutes);
+        var sunsetAngle = ((360 / 24) * sunsetHours) + ((360 / 24 / 60) * sunsetMinutes);
+        this.sunset.startAngle = 180 - sunriseAngle;
+        this.sunset.sweepAngle = 360 - sunsetAngle + sunriseAngle;
 
         console.log("Weather Updated");
     }

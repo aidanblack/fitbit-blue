@@ -10,7 +10,7 @@ class Clock {
     weather;
     mode;
 
-    constructor(dateMonth, dateDay, hourHand, minuteHand, secondHand, hourShadow, minuteShadow, secondShadow) {
+    constructor() {
         try {
             this.dateMonth = new FitFont({ 
                 id:'dateMonth',
@@ -32,7 +32,7 @@ class Clock {
             });
             this.hourHand = document.getElementById("hours");
             this.minuteHand = document.getElementById("minutes");
-            this.secondsHand = document.getElementById("seconds");
+            this.secondHand = document.getElementById("seconds");
             this.hourShadow = document.getElementById("hourShadow");
             this.minuteShadow = document.getElementById("minuteShadow");
             this.secondShadow = document.getElementById("secondShadow");

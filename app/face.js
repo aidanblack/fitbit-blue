@@ -7,10 +7,8 @@ class Face {
     body;
     hrm;
 
-    constructor(settings, dateMonth, dateDay) {
+    constructor(settings) {
         this.settings = settings;
-        this.dateMonth = dateMonth;
-        this.dateDay = dateDay;
     }
 
     updateDisplay(mode) {

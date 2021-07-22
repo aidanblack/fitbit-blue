@@ -60,7 +60,7 @@
     <svg mask="#mask" x="-155" y="-155" width="310" height="310">
         <gradientRect x="0" y="0" width="100%" height="100%"
         gradient-type="bilinear"
-        gradient-x1="100" gradient-y1="100"
+        gradient-x1="75" gradient-y1="75"
         gradient-x2="258" gradient-y2="258"
         gradient-color1="#104b72"
         gradient-color2="#145986"
@@ -165,6 +165,9 @@
         </use>
     </g>
     <g id="weatherBox" transform="translate(-60,40)">
+        <circle cx="0" cy="0" r="10%" fill="#6699CC" />
+        <arc id="sunset" x="-10%" y="-10%" width="20%" height="20%" fill="#223344"
+            arc-width="10%" start-angle="90" sweep-angle="180" />
         <use id="smallRing2" href="#smallRing" />
         <use href="#fitfont" id="temperature" class="primary" x="2" y="21">
             <use href="#fitfont-char"/>

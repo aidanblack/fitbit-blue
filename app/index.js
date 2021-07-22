@@ -51,7 +51,7 @@ body.mode = clockController.mode;
 // ***** Display *****
 console.log("set up display");
 
-var face = new Face(settings, dateMonth, dateDay);
+var face = new Face(settings);
 
 if (display.aodAvailable && me.permissions.granted("access_aod")) {
   // tell the system we support AOD
