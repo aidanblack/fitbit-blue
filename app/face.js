@@ -84,14 +84,10 @@ class Face {
     }
 
     switchColor(color) {
-        if (color == 0) document.getElementById("faceBlue").style.visibility = "visible";
-        else document.getElementById("faceBlue").style.visibility = "hidden";
-        if (color == 1) document.getElementById("faceGreen").style.visibility = "visible";
-        else document.getElementById("faceGreen").style.visibility = "hidden";
-        if (color == 2) document.getElementById("faceRed").style.visibility = "visible";
-        else document.getElementById("faceRed").style.visibility = "hidden";
-        if (color == 3) document.getElementById("faceGrey").style.visibility = "visible";
-        else document.getElementById("faceGrey").style.visibility = "hidden";
+        if (color == 0) document.getElementById("faceColor").style.fill = "#145986";
+        if (color == 1) document.getElementById("faceColor").style.fill = "#148659";
+        if (color == 2) document.getElementById("faceColor").style.fill = "#861414";
+        if (color == 3) document.getElementById("faceColor").style.fill = "#444444";
     }
 }
 

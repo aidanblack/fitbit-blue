@@ -34,14 +34,14 @@ class Weather {
     
         var sunriseAngle = ((360 / 24) * sunriseHours) + ((360 / 24 / 60) * sunriseMinutes);
         var sunsetAngle = ((360 / 24) * sunsetHours) + ((360 / 24 / 60) * sunsetMinutes);
-        this.sunset.startAngle = 180 - sunriseAngle;
-        this.sunset.sweepAngle = 360 - sunsetAngle + sunriseAngle;
+        this.sunset.startAngle = 180 + sunsetAngle;
+        this.sunset.sweepAngle = 360 - (sunsetAngle - sunriseAngle);
 
         var timestampDate = new Date(this.timestamp);
         let hours = timestampDate.getHours();
         let minutes = timestampDate.getMinutes();
         var rotateAngle = ((360 / 24) * hours) + ((360 / 24 / 60) * minutes);
-        document.getElementById("sunlight").groupTransform.rotate.angle = 180 + rotateAngle;
+        document.getElementById("sunlight").groupTransform.rotate.angle = 180 - rotateAngle;
 
         console.log("Weather Updated");
     }

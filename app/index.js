@@ -112,7 +112,7 @@ smallRing3.addEventListener("click", (evt) => {
 });
 
 console.log(settings.faceColor.selected);
-face.switchColor(settings.faceColor.selected);
+face.switchColor(settings.faceColor.selected || "0");
 
 // ***** Weather *****
 console.log("set up weather");
