@@ -1,5 +1,7 @@
 import clock from "clock";
+import document from "document";
 import { modes } from "./modes";
+import { FitFont } from "fitfont";
 
 class Clock {
     updateDisplay = function(mode) {};
@@ -10,15 +12,31 @@ class Clock {
 
     constructor(dateMonth, dateDay, hourHand, minuteHand, secondHand, hourShadow, minuteShadow, secondShadow) {
         try {
-            this.dateMonth = dateMonth;
-            this.dateDay = dateDay;
-            this.hourHand = hourHand;
-            this.minuteHand = minuteHand;
-            this.secondHand = secondHand;
-            this.hourShadow = hourShadow;
-            this.minuteShadow = minuteShadow;
-            this.secondShadow = secondShadow;
-
+            this.dateMonth = new FitFont({ 
+                id:'dateMonth',
+                font:'Futura_24',
+              
+                // Optional
+                halign: 'middle',
+                valign: 'baseline',
+                letterspacing: -1
+            });
+            this.dateDay = new FitFont({ 
+                id:'dateDay',
+                font:'Futura_24',
+              
+                // Optional
+                halign: 'middle',
+                valign: 'baseline',
+                letterspacing: -1
+            });
+            this.hourHand = document.getElementById("hours");
+            this.minuteHand = document.getElementById("minutes");
+            this.secondsHand = document.getElementById("seconds");
+            this.hourShadow = document.getElementById("hourShadow");
+            this.minuteShadow = document.getElementById("minuteShadow");
+            this.secondShadow = document.getElementById("secondShadow");
+              
             clock.granularity = "seconds";
         }
         catch (err) {

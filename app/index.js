@@ -38,41 +38,7 @@ messaging.peerSocket.addEventListener("message", (evt) => {
 // ***** Clock *****
 console.log("set up clock");
 
-const dateMonth = new FitFont({ 
-  id:'dateMonth',
-  font:'Futura_24',
-
-  // Optional
-  halign: 'middle',
-  valign: 'baseline',
-  letterspacing: -1
-});
-const dateDay = new FitFont({ 
-  id:'dateDay',
-  font:'Futura_24',
-
-  // Optional
-  halign: 'middle',
-  valign: 'baseline',
-  letterspacing: -1
-});
-const hourHand = document.getElementById("hours");
-const minuteHand = document.getElementById("minutes");
-const secondsHand = document.getElementById("seconds");
-const hourShadow = document.getElementById("hourShadow");
-const minuteShadow = document.getElementById("minuteShadow");
-const secondShadow = document.getElementById("secondShadow");
-
-var clockController = new Clock(
-  dateMonth,
-  dateDay,
-  hourHand,
-  minuteHand,
-  secondsHand,
-  hourShadow,
-  minuteShadow,
-  secondShadow
-);
+var clockController = new Clock();
 
 clockController.mode = modes.Battery;
 
