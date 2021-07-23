@@ -112,7 +112,13 @@ statsClick.addEventListener("click", (evt) => {
   console.log(JSON.stringify(clockController.mode));
 });
 
-face.switchColor(settings.faceColor.selected || "0");
+try {
+  face.switchColor(settings.faceColor.selected || "0");
+}
+catch (err) {
+  console.log(err);
+  face.switchColor("0");
+}
 
 // ***** Weather *****
 console.log("set up weather");

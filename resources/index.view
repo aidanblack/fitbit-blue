@@ -210,6 +210,6 @@
 
     <circle r="8" class="secondary" opacity="1" fill="#999999" />
 
-    <rect id="statsBox" x="50 - 10%" y="30 - 10%" width="20% + 20" height="20% + 20" fill="#5e2a12" opacity="0" pointer-events="visible" />
+    <rect id="statsBox" x="50 - 10%" y="30 - 10%" width="20% + 20" height="20% + 20" fill="#6e2f06" opacity="0" pointer-events="visible" />
 </g>
 </svg>
