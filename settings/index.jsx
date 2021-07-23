@@ -18,7 +18,8 @@ function blueSettings(props) {
                         { name: "Blue" },
                         { name: "Green" },
                         { name: "Red" },
-                        { name: "Grey" }
+                        { name: "Grey" },
+                        { name: "Brown" }
                     ]}
                 />
                 {/* <Toggle

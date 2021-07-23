@@ -43,9 +43,6 @@
             arc-width="2" start-angle="0" sweep-angle="360" />
         <circle cx="0" cy="0" r="9% - 1" fill="black" opacity="0.05" pointer-events="visible" />
     </symbol>
-    <mask id="mask">
-        <circle cx="155" cy="155" r="155" />
-    </mask>
 </defs>
 
 <g transform="translate(50%,50%)">
@@ -59,16 +56,7 @@
 
     <circle id="faceColor" cx="0" cy="0" r="155" fill="#145986" />
 
-    <svg id="faceShade" mask="#mask" x="-155" y="-155" width="310" height="310" opacity="0.4">
-        <gradientRect x="0" y="0" width="100%" height="100%"
-        gradient-type="bilinear"
-        gradient-x1="75" gradient-y1="75"
-        gradient-x2="258" gradient-y2="258"
-        gradient-color1="#666666"
-        gradient-color2="white"
-        gradient-color3="white"
-        gradient-color4="black" />
-    </svg>
+    <image x="-155" y="-155" width="310" height="310" href="bilinear.png" opacity="0.2" />
 
     <g transform="rotate(0)"><use href="#fiveMinutesPrimary" /></g>
     <g transform="rotate(30)"><use href="#fiveMinutes" /></g>
@@ -181,7 +169,8 @@
         </use>
         <image id="weatherIcon" x="-20" y="-31" width="40" height="40" href="weather/4d.png" />
     </g>
-    <g id="icons" transform="translate(60,40)" >
+    <g id="icons" transform="translate(60,40)">
+        <circle cx="0" cy="0" r="10%" fill="black" opacity="0.5" />
         <arc id="statsArc" x="-9%" y="-9%" width="18%" height="18%" fill="#3FD300"
             arc-width="1%" start-angle="0" sweep-angle="270" />
         <image id="batteryIcon" href="battery.png" width="30" height="30" x="-13" y="-15" fill="#3FD300" visibility="visible" />
@@ -189,17 +178,10 @@
         <image id="stepsIcon" href="footprints.png" width="25" height="42" x="-12" y="-21" fill="#EFC12B" visibility="hidden" />
         <image id="distanceIcon" href="signpost.png" width="25" height="37" x="-12" y="-18" fill="#376EEF" visibility="hidden" />
         <image id="zoneIcon" href="dart.png" width="25" height="25" x="-12" y="-12" fill="#EA7D1E" visibility="hidden" />
-        <use id="smallRing3" href="#smallRing" pointer-events="visible" />
+        <use id="smallRing3" href="#smallRing" />
     </g>
 
-    <svg mask="#mask" x="-155" y="-155" width="310" height="310" opacity="0.2">
-        <gradientRect x="0" y="0" width="100%" height="100%"
-        gradient-type="radial"
-        gradient-x1="50%" gradient-y1="50%"
-        gradient-x2="50%+150" gradient-y2="50%+150"
-        gradient-color1="black"
-        gradient-color2="white" />
-    </svg>
+    <image x="-155" y="-155" width="310" height="310" href="radial.png" opacity="0.2" />
 
     <g>
         <g id="hourShadow" transform="translate(8,8)">
@@ -227,5 +209,7 @@
     </g>
 
     <circle r="8" class="secondary" opacity="1" fill="#999999" />
+
+    <rect id="statsBox" x="50 - 10%" y="30 - 10%" width="20% + 20" height="20% + 20" fill="#5e2a12" opacity="0" pointer-events="visible" />
 </g>
 </svg>

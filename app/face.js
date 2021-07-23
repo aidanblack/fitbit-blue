@@ -85,9 +85,10 @@ class Face {
 
     switchColor(color) {
         if (color == 0) document.getElementById("faceColor").style.fill = "#145986";
-        if (color == 1) document.getElementById("faceColor").style.fill = "#148659";
-        if (color == 2) document.getElementById("faceColor").style.fill = "#861414";
-        if (color == 3) document.getElementById("faceColor").style.fill = "#444444";
+        if (color == 1) document.getElementById("faceColor").style.fill = "#116b20";
+        if (color == 2) document.getElementById("faceColor").style.fill = "#791212";
+        if (color == 3) document.getElementById("faceColor").style.fill = "#333333";
+        if (color == 4) document.getElementById("faceColor").style.fill = "#5e2a12";
     }
 }
 

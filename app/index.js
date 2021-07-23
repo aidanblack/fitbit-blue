@@ -100,8 +100,9 @@ else {
 
 clockController.updateDisplay = (mode) => { face.updateDisplay(mode) };
 
-const smallRing3 = document.getElementById("smallRing3");
-smallRing3.addEventListener("click", (evt) => {
+const statsClick = document.getElementById("statsBox");
+statsClick.addEventListener("click", (evt) => {
+  console.log("click");
   clockController.mode = face.switchMode(clockController.mode);
   body.mode = clockController.mode;
   clockController.updateGoals(clockController.mode);
@@ -111,7 +112,6 @@ smallRing3.addEventListener("click", (evt) => {
   console.log(JSON.stringify(clockController.mode));
 });
 
-console.log(settings.faceColor.selected);
 face.switchColor(settings.faceColor.selected || "0");
 
 // ***** Weather *****
