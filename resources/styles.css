@@ -24,6 +24,10 @@
   opacity: 0.66;
 }
 
+.square {
+  visibility: hidden;
+}
+
 #steps {
   fill: #EFC12B;
 }

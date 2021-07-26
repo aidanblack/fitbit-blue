@@ -35,6 +35,9 @@ messaging.peerSocket.addEventListener("message", (evt) => {
     if (evt.data.key === "faceColor") {
       face.switchColor(evt.data.value.selected);
     }
+    if (evt.data.key === "faceShape") {
+      face.switchShape(evt.data.value.selected);
+    }
   }
 });
 
@@ -118,6 +121,14 @@ try {
 catch (err) {
   console.log(err);
   face.switchColor("0");
+}
+
+try {
+  face.switchShape(settings.faceShape.selected || "0");
+}
+catch (err) {
+  console.log(err);
+  face.switchShape("0");
 }
 
 // ***** Weather *****

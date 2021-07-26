@@ -19,16 +19,7 @@
         <circle cx="0" cy="-148" r="2" />
     </symbol>
     <symbol id="fiveMinutesPrimary">
-<g transform="rotate(0)" class="primary"><use href="#hourMark" /></g>
-<g class="tertiary" transform="rotate(6)">
-    <use href="#minuteMark" />
-    <g transform="rotate(6)"><use href="#minuteMark" /></g>
-    <g transform="rotate(12)"><use href="#minuteMark" /></g>
-    <g transform="rotate(18)"><use href="#minuteMark" /></g>
-</g>
-</symbol>
-    <symbol id="fiveMinutes">
-        <g transform="rotate(0)" class="secondary"><use href="#fiveMinuteMark" /></g>
+        <g transform="rotate(0)" class="primary"><use href="#hourMark" /></g>
         <g class="tertiary" transform="rotate(6)">
             <use href="#minuteMark" />
             <g transform="rotate(6)"><use href="#minuteMark" /></g>
@@ -36,27 +27,13 @@
             <g transform="rotate(18)"><use href="#minuteMark" /></g>
         </g>
     </symbol>
-    <symbol id="fifteenMinutesSquare">
-        <g transform="rotate(0)" class="primary"><use href="#hourMark" y="-8" /></g>
-        <g class="tertiary">
-            <g transform="rotate(6)"><use href="#minuteMark" y="-9" /></g>
-            <g transform="rotate(12)"><use href="#minuteMark" y="-11" /></g>
-            <g transform="rotate(18)"><use href="#minuteMark" y="-14" /></g>
-            <g transform="rotate(24)"><use href="#minuteMark" y="-18" /></g>
-        </g>
-        <g transform="rotate(30)" class="secondary"><use href="#fiveMinuteMark" y="-23" /></g>
-        <g class="tertiary">
-            <g transform="rotate(36)"><use href="#minuteMark" y="-29" /></g>
-            <g transform="rotate(42)"><use href="#minuteMark" y="-34" /></g>
-            <g transform="rotate(48)"><use href="#minuteMark" y="-34" /></g>
-            <g transform="rotate(54)"><use href="#minuteMark" y="-29" /></g>
-        </g>
-        <g transform="rotate(60)" class="secondary"><use href="#fiveMinuteMark" y="-23" /></g>
-        <g class="tertiary">
-            <g transform="rotate(66)"><use href="#minuteMark" y="-18" /></g>
-            <g transform="rotate(72)"><use href="#minuteMark" y="-14" /></g>
-            <g transform="rotate(78)"><use href="#minuteMark" y="-11" /></g>
-            <g transform="rotate(84)"><use href="#minuteMark" y="-9" /></g>
+    <symbol id="fiveMinutes">
+        <g transform="rotate(0)" class="secondary"><use href="#fiveMinuteMark" /></g>
+        <g class="tertiary" transform="rotate(6)">
+            <use href="#minuteMark" />
+            <g transform="rotate(6)"><use href="#minuteMark" /></g>
+            <g transform="rotate(12)"><use href="#minuteMark" /></g>
+            <g transform="rotate(18)"><use href="#minuteMark" /></g>
         </g>
     </symbol>
     <symbol id="smallRing">
@@ -70,44 +47,31 @@
 
 <g transform="translate(50%,50%)">
 
-    <g class="circle">
-        <arc x="-168" y="-168" width="335" height="335"  fill="#999999"
-            arc-width="10" start-angle="0" sweep-angle="360"/>
-        <arc x="-164" y="-164" width="332" height="332"  fill="#555555"
-            arc-width="7" start-angle="0" sweep-angle="360"/>
-        <arc x="-165" y="-165" width="330" height="330" fill="#777777"
-            arc-width="5" start-angle="0" sweep-angle="360" />
-    </g>
+    <arc x="-168" y="-168" width="335" height="335"  fill="#999999"
+        arc-width="10" start-angle="0" sweep-angle="360"/>
+    <arc x="-164" y="-164" width="332" height="332"  fill="#555555"
+        arc-width="7" start-angle="0" sweep-angle="360"/>
+    <arc x="-165" y="-165" width="330" height="330" fill="#777777"
+        arc-width="5" start-angle="0" sweep-angle="360" />
 
-    <circle class="circle faceColor" cx="0" cy="0" r="155" fill="#145986" />
-    <rect class="square faceColor" x="-50%" y="-50%" width="100%" height="100%" fill="#145986" />
+    <circle id="faceColor" cx="0" cy="0" r="155" fill="#145986" />
 
-    <image class="circle" x="-155" y="-155" width="310" height="310" href="bilinear.png" opacity="0.2" />
-    <image class="square" x="-50%" y="-50%" width="100%" height="100%" href="bilinearSquare.png" opacity="0.2" />
+    <image x="-155" y="-155" width="310" height="310" href="bilinear.png" opacity="0.2" />
 
-    <g class="circle">
-        <g transform="rotate(0)"><use href="#fiveMinutesPrimary" /></g>
-        <g transform="rotate(30)"><use href="#fiveMinutes" /></g>
-        <g transform="rotate(60)"><use href="#fiveMinutes" /></g>
-        <g transform="rotate(90)"><use href="#fiveMinutesPrimary" /></g>
-        <g transform="rotate(120)"><use href="#fiveMinutes" /></g>
-        <g transform="rotate(150)"><use href="#fiveMinutes" /></g>
-        <g transform="rotate(180)"><use href="#fiveMinutesPrimary" /></g>
-        <g transform="rotate(210)"><use href="#fiveMinutes" /></g>
-        <g transform="rotate(240)"><use href="#fiveMinutes" /></g>
-        <g transform="rotate(270)"><use href="#fiveMinutesPrimary" /></g>
-        <g transform="rotate(300)"><use href="#fiveMinutes" /></g>
-        <g transform="rotate(330)"><use href="#fiveMinutes" /></g>
-    </g>
+    <g transform="rotate(0)"><use href="#fiveMinutesPrimary" /></g>
+    <g transform="rotate(30)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(60)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(90)"><use href="#fiveMinutesPrimary" /></g>
+    <g transform="rotate(120)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(150)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(180)"><use href="#fiveMinutesPrimary" /></g>
+    <g transform="rotate(210)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(240)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(270)"><use href="#fiveMinutesPrimary" /></g>
+    <g transform="rotate(300)"><use href="#fiveMinutes" /></g>
+    <g transform="rotate(330)"><use href="#fiveMinutes" /></g>
 
-    <g class="square">    
-        <g transform="rotate(0)"><use href="#fifteenMinutesSquare" /></g>
-        <g transform="rotate(90)"><use href="#fifteenMinutesSquare" /></g>
-        <g transform="rotate(180)"><use href="#fifteenMinutesSquare" /></g>
-        <g transform="rotate(270)"><use href="#fifteenMinutesSquare" /></g>
-    </g>
-
-    <g class="circle" id="numbers">
+    <g id="numbers">
         <image class="primary" x="-20" y="-137" width="18" height="22" href="Futura_30/49.png" fill="#777777" />
         <image class="primary" x="-16" y="-133" width="18" height="22" href="Futura_30/49.png" fill="#333333" />
         <image class="primary" x="-18" y="-135" width="18" height="22" href="Futura_30/49.png" />
@@ -176,75 +140,6 @@
             <image class="primary" x="4" y="-10" width="18" height="22" href="Futura_30/49.png" />
         </g></g></g>
     </g>
-    <g class="square" id="numbers">
-        <image class="primary" x="-20" y="-137" width="18" height="22" href="Futura_30/49.png" fill="#777777" />
-        <image class="primary" x="-16" y="-133" width="18" height="22" href="Futura_30/49.png" fill="#333333" />
-        <image class="primary" x="-18" y="-135" width="18" height="22" href="Futura_30/49.png" />
-        <image class="primary" x="-2" y="-137" width="18" height="22" href="Futura_30/50.png" fill="#777777" />
-        <image class="primary" x="2" y="-133" width="18" height="22" href="Futura_30/50.png" fill="#333333" />
-        <image class="primary" x="0" y="-135" width="18" height="22" href="Futura_30/50.png" />
-        <g transform="rotate(30)">         <g transform="translate(0,-138)"><g transform="rotate(-30)">
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/49.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/49.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/49.png" />
-        </g></g></g>
-        <g transform="rotate(60)">         <g transform="translate(0,-138)"><g transform="rotate(-60)">
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/50.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/50.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/50.png" />
-        </g></g></g>
-        <g transform="rotate(90)" id="iii"><g transform="translate(0,-123)"><g transform="rotate(-90)"> 
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/51.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/51.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/51.png" />
-        </g></g></g>
-        <g transform="rotate(120)">        <g transform="translate(0,-138)"><g transform="rotate(-120)">
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/52.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/52.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/52.png" />
-        </g></g></g>
-        <g transform="rotate(150)">        <g transform="translate(0,-138)"><g transform="rotate(-150)">
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/53.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/53.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/53.png" />
-        </g></g></g>
-        <g transform="rotate(180)" id="vi"><g transform="translate(0,-123)"><g transform="rotate(-180)">
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/54.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/54.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/54.png" />
-        </g></g></g>
-        <g transform="rotate(210)">        <g transform="translate(0,-136)"><g transform="rotate(-210)">
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/55.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/55.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/55.png" />
-        </g></g></g>
-        <g transform="rotate(240)">        <g transform="translate(0,-138)"><g transform="rotate(-240)">
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/56.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/56.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/56.png" />
-        </g></g></g>
-        <g transform="rotate(270)" id="ix"><g transform="translate(0,-123)"><g transform="rotate(-270)">
-            <image class="primary" x="-11" y="-12" width="18" height="22" href="Futura_30/57.png" fill="#777777" />
-            <image class="primary" x="-7" y="-8" width="18" height="22" href="Futura_30/57.png" fill="#333333" />
-            <image class="primary" x="-9" y="-10" width="18" height="22" href="Futura_30/57.png" />
-        </g></g></g>
-        <g transform="rotate(300)">        <g transform="translate(0,-138)"><g transform="rotate(-300)">
-            <image class="primary" x="-16" y="-12" width="18" height="22" href="Futura_30/49.png" fill="#777777" />
-            <image class="primary" x="-12" y="-8" width="18" height="22" href="Futura_30/49.png" fill="#333333" />
-            <image class="primary" x="-14" y="-10" width="18" height="22" href="Futura_30/49.png" />
-            <image class="primary" x="2" y="-12" width="18" height="22" href="Futura_30/48.png" fill="#777777" />
-            <image class="primary" x="6" y="-8" width="18" height="22" href="Futura_30/48.png" fill="#333333" />
-            <image class="primary" x="4" y="-10" width="18" height="22" href="Futura_30/48.png" />
-        </g></g></g>
-        <g transform="rotate(330)">        <g transform="translate(0,-138)"><g transform="rotate(-330)">
-            <image class="primary" x="-16" y="-12" width="18" height="22" href="Futura_30/49.png" fill="#777777" />
-            <image class="primary" x="-12" y="-8" width="18" height="22" href="Futura_30/49.png" fill="#333333" />
-            <image class="primary" x="-14" y="-10" width="18" height="22" href="Futura_30/49.png" />
-            <image class="primary" x="2" y="-12" width="18" height="22" href="Futura_30/49.png" fill="#777777" />
-            <image class="primary" x="6" y="-8" width="18" height="22" href="Futura_30/49.png" fill="#333333" />
-            <image class="primary" x="4" y="-10" width="18" height="22" href="Futura_30/49.png" />
-        </g></g></g>
-    </g>
 
     <g transform="translate(0,-60)">
         <use id="smallRing1" href="#smallRing" />
@@ -286,8 +181,7 @@
         <use id="smallRing3" href="#smallRing" />
     </g>
 
-    <image class="circle" x="-155" y="-155" width="310" height="310" href="radial.png" opacity="0.2" />
-    <image class="square" x="-50%" y="-50%" width="100%" height="100%" href="radialSquare.png" opacity="0.2" />
+    <image x="-155" y="-155" width="310" height="310" href="radial.png" opacity="0.2" />
 
     <g>
         <g id="hourShadow" transform="translate(8,8)">

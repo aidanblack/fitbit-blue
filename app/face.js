@@ -84,12 +84,30 @@ class Face {
     }
 
     switchColor(color) {
-        if (color == 0) document.getElementById("faceColor").style.fill = "#145986";
-        if (color == 1) document.getElementById("faceColor").style.fill = "#116b20";
-        if (color == 2) document.getElementById("faceColor").style.fill = "#791212";
-        if (color == 3) document.getElementById("faceColor").style.fill = "#333333";
-        if (color == 4) document.getElementById("faceColor").style.fill = "#6e2f06";
+        if (color == 0) document.getElementsByClassName("faceColor").forEach((item) => {item.style.fill = "#145986"});
+        if (color == 1) document.getElementsByClassName("faceColor").forEach((item) => {item.style.fill = "#116b20"});
+        if (color == 2) document.getElementsByClassName("faceColor").forEach((item) => {item.style.fill = "#791212"});
+        if (color == 3) document.getElementsByClassName("faceColor").forEach((item) => {item.style.fill = "#333333"});
+        if (color == 4) document.getElementsByClassName("faceColor").forEach((item) => {item.style.fill = "#6e2f06"});
+    }
+
+    switchShape(shape) {
+        if (shape == 0) {
+            document.getElementsByClassName("square").forEach((item) => {item.style.visibility = "hidden"});
+            document.getElementsByClassName("circle").forEach((item) => {item.style.visibility = "visible"});
+            document.getElementById("weatherBox").groupTransform.translate.y = 40;
+            document.getElementById("icons").groupTransform.translate.y = 40;
+        }
+        if (shape == 1) {
+            document.getElementsByClassName("circle").forEach((item) => {item.style.visibility = "hidden"});
+            document.getElementsByClassName("square").forEach((item) => {item.style.visibility = "visible"});
+            document.getElementById("weatherBox").groupTransform.translate.y = 50;
+            document.getElementById("icons").groupTransform.translate.y = 50;
+        }
     }
 }
+
+function showItem(item) { item.style.visibility = "visible"; }
+function hideItem(item) { item.style.visibility = "hidden"; }
 
 export default Face;

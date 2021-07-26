@@ -22,6 +22,14 @@ function blueSettings(props) {
                         { name: "Brown" }
                     ]}
                 />
+                <Select
+                    label={`Style`}
+                    settingsKey="faceShape"
+                    options={[
+                        { name: "Round" },
+                        { name: "Square" }
+                    ]}
+                />
                 {/* <Toggle
                     settingsKey="hideDate"
                     label="Hide Date"
