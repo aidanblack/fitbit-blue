@@ -10,6 +10,8 @@ Included sensors are:
 + Distance
 + Active Zone Minutes
 
+The clock face can also be switched from round to square in the settings.
+
 <img src="Screenshot1.png" />
 <img src="Screenshot2.png" />
 <img src="Screenshot3.png" />

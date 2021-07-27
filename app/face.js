@@ -107,7 +107,4 @@ class Face {
     }
 }
 
-function showItem(item) { item.style.visibility = "visible"; }
-function hideItem(item) { item.style.visibility = "hidden"; }
-
 export default Face;
