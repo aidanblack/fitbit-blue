@@ -19,3 +19,4 @@ The clock face can also be switched from round to square in the settings.
 <img src="Screenshot5.png" />
 
 This clock has only been tested on Fitbit Versa 3, so please feel free to submit a pull request with any improvements or bug fixes. (Comments and stars are also welcome!)
+
